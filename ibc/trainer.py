@@ -222,7 +222,7 @@ class ImplicitTrainState:
             }
         )
 
-    @torch.no_grad()
+    # @torch.no_grad()
     def evaluate(
         self, dataloader: torch.utils.data.DataLoader
     ) -> experiment.TensorboardLogData:
