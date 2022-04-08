@@ -1,7 +1,9 @@
 dcargs
-torch
-torchvision
-matplotlib
-tqdm
+torch~=1.9.1
+torchvision~=0.10.1
+matplotlib~=3.4.3
+tqdm~=4.62.3
 tensorboard
-scipy
+scipy~=1.7.2
+
+numpy~=1.21.2

@@ -24,6 +24,9 @@ class OptimizerConfig:
     lr_scheduler_gamma: float = 0.99
 
 
+
+
+
 # =================================================================== #
 # Stochastic optimization for EBM training and inference.
 # =================================================================== #
@@ -137,6 +140,26 @@ class StochasticOptimizerType(enum.Enum):
     # Note(kevin): The paper describes three types of samplers. Right now, we just have
     # the derivative free sampler implemented.
     DERIVATIVE_FREE = enum.auto()
+
+
+
+
+
+
+
+
+class LangevianOptimiser:
+    def __init__(self,Buffer = torch.tensor([]),sampler_stepsize_init=1e-1,
+        pass
+    def sampling(self, x: torch.Tensor, ebm: nn.Module) -> torch.Tensor:
+        size = (x.size(0),num_samples, self.bounds.shape[1])
+        samples = torch.randn(*size)
+        for i in range(self.K):
+            samples.requires_grad_()
+            energies = ebm(x, samples)
+            grad = torch.autograd.grad(energies,samples)
+
+
 
 
 if __name__ == "__main__":
