@@ -148,16 +148,16 @@ class StochasticOptimizerType(enum.Enum):
 
 
 
-class LangevianOptimiser:
-    def __init__(self,Buffer = torch.tensor([]),sampler_stepsize_init=1e-1,
-        pass
-    def sampling(self, x: torch.Tensor, ebm: nn.Module) -> torch.Tensor:
-        size = (x.size(0),num_samples, self.bounds.shape[1])
-        samples = torch.randn(*size)
-        for i in range(self.K):
-            samples.requires_grad_()
-            energies = ebm(x, samples)
-            grad = torch.autograd.grad(energies,samples)
+# class LangevianOptimiser:
+#     def __init__(self,Buffer = torch.tensor([]),sampler_stepsize_init=1e-1,
+#         pass
+#     def sampling(self, x: torch.Tensor, ebm: nn.Module) -> torch.Tensor:
+#         size = (x.size(0),num_samples, self.bounds.shape[1])
+#         samples = torch.randn(*size)
+#         for i in range(self.K):
+#             samples.requires_grad_()
+#             energies = ebm(x, samples)
+#             grad = torch.autograd.grad(energies,samples)
 
 
 
