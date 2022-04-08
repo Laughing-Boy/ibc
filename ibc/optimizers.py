@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import dataclasses
 import enum
-from typing import Protocol
+from typing_extensions import Protocol
 
 import numpy as np
 import torch
